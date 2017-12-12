@@ -1,0 +1,62 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #111116;
+    color: #fff;
+}
+
+h1, h2, h3, h4, p {
+    font-weight: 100;
+    margin: 0px;
+}
+
+.highlight {
+    color: #ffeb3b;
+}
+
+a {
+    color: #ffeb3b;
+}
+
+#wrapper {
+    margin-top: 100px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+p {
+    max-width: 400px;
+}
+
+.divider {
+    height: 40px;
+}
+
+.item {
+    position: relative;
+}
+
+.item p {
+    position: absolute;
+    top: 0px;
+    left: 14px;
+}
+
+.ast {
+    color: #ffeb3b;
+    display: inline-block;
+    font-size: 26px;
+    margin-bottom: -10px;
+}
+
+.ast::before {
+    content: '*';
+}
+
+#particles-js {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: -10;
+}
