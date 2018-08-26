@@ -611,7 +611,7 @@ async function check_self_reveal() {
         $('#self_rev_waiting').hide();
         $('#self_rev_reveal').show();
 
-        $('#self_rev_choice').text(['Rock', 'Paper', 'Scissors'][reveal])
+        $('#self_rev_choice').text(['Rock', 'Paper', 'Scissors'][reveal - 1])
     }
 
 }
@@ -664,7 +664,7 @@ async function check_opp_reveal() {
         $('#rev_waiting').hide();
         $('#rev_reveal').show();
 
-        $('#rev_reveal_choice').text(['Rock', 'Paper', 'Scissors'][r])
+        $('#rev_reveal_choice').text(['Rock', 'Paper', 'Scissors'][r - 1])
     }
 
 }
