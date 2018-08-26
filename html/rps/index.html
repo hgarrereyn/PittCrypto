@@ -1,0 +1,186 @@
+<html>
+
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+
+    <body>
+        <div class="container" style='margin-top:10px;'>
+            <div style='float:right;'>
+                <img src='/res/logo/logo_circle_512.png' width=100 height=100 />
+            </div>
+
+            <h1>Provably Fair Rock Paper Scissors</h1>
+
+            <hr/>
+
+            <p>Your address: <span class='dat' style='font-weight: bold;' id='account'></span></p>
+            <p>Contract address: <span class='dat' id='contract'></span></p>
+            <p>Current block height: <span class='dat' id='blockNumber'></span></p>
+
+            <hr/>
+
+            <p>Refresh:</p>
+            <div id='refresh_bar'></div>
+
+            <hr/>
+
+            <br/>
+            <br/>
+
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-5">You (<span class='dat' id='addrA'></span>)</div>
+                <div class="col-xs-5">Opponent (<span class='dat' id='addrB'></span>)</div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <div class="col-xs-2">Commit Phase</div>
+                <div class="col-xs-5">
+                    <div id='self_need_commit' style='display:none;'>
+                        <p>Choose rock, paper or scissors and think of a random number:</p>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="commitChoice" id="commitChoiceRock" value="1" checked>
+                                Rock
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="commitChoice" id="commitChoicePaper" value="2">
+                                Paper
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="commitChoice" id="commitChoiceScissors" value="3">
+                                Scissors
+                            </label>
+                        </div>
+                        <form class='form-inline'>
+                            <div class="form-group">
+                                <label for="commitEntropy">Random Number</label>
+                                <input style='margin-left:10px;' type="number" class='form-control' id="commitEntropy" placeholder="12345...">
+                            </div>
+                        </form>
+
+                        <hr/>
+
+                        <p>To commit: <span class='dat' id='selfToCommit'></span></p>
+
+                        <button type="button" id='commit_btn' class="btn btn-default">Commit and send 0.01 ether</button>
+                    </div>
+                    <div id='self_mining_commit' style='display:none;'>
+                        Waiting for transaction to be mined...
+                    </div>
+                    <div id='self_has_commit' style='display:none;'>
+                        You commited: <span class='dat' id='self_comm'></span>
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                    <div id='com_waiting' style='display:none;'>Waiting for opponent to sent commitment...</div>
+                    <div id='com_received' style='display:none;'>Opponent has commited: <span class='dat' id='opp_comm'></span></div>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+                <div class="col-xs-2">Reveal Phase</div>
+                <div class="col-xs-5">
+                    <div id='self_rev_pre' style='display:none'><span style='color: #888;'>Choices can not be revealed until both parties have commited</span></div>
+                    <div id='self_rev_waiting' style='display:none'>
+                        <p>Select the same values as before and click reveal to send them to the smart contract.</p>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="revealChoice" id="revealChoiceRock" value="1" checked>
+                                Rock
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="revealChoice" id="revealChoicePaper" value="2">
+                                Paper
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="revealChoice" id="revealChoiceScissors" value="3">
+                                Scissors
+                            </label>
+                        </div>
+                        <form class='form-inline'>
+                            <div class="form-group">
+                                <label for="commitEntropy">Random Number</label>
+                                <input style='margin-left:10px;' type="number" class='form-control' id="revealEntropy" placeholder="12345...">
+                            </div>
+                        </form>
+
+                        <hr/>
+
+                        <p>Hash: <span class='dat' id='selfToReveal'></span></p>
+
+                        <button type="button" id='reveal_btn' class="btn btn-default disabled">Reveal your choices</button>
+                    </div>
+                    <div id='self_rev_mining' style='display:none;'>
+                            Waiting for transaction to be mined...
+                        </div>
+                    <div id='self_rev_reveal' style='display:none'>
+                        You revealed: <span class='dat' id='self_rev_choice'></span></span>
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                    <div id='rev_pre' style='display:none'><span style='color: #888;'>Choices can not be revealed until both parties have commited</span></div>
+                    <div id='rev_waiting' style='display:none'>
+                        <p>Waiting for opponent to reveal choice...</p>
+                        <div id='rev_claim' style='display:none;'>
+                            <p id='rev_claim_maybe' style='display:none;'>If your opponent doesn't reveal their choice in <span class='dat' id='rev_claim_time'></span> more blocks, you can claim victory:</p>
+                            <button type="button" id='claim_btn' class="btn btn-default disabled">Claim Victory</button>
+                        </div>
+                    </div>
+                    <div id='rev_reveal' style='display:none'>Oponent revealed: <span class='dat' id='rev_reveal_choice'></span></div>
+                </div>
+            </div>
+
+            <br/>
+            <br/>
+
+        </div>
+        
+
+
+        <style>
+            .dat {
+                font-weight: bold;
+            }
+
+            div {
+                overflow-wrap: break-word;
+            }
+
+            #refresh_bar {
+                width: 1%;
+                height: 2px;
+                background-color: red;
+            }
+            
+            #refresh_bar.go {
+                width: 100%;
+                transition: width 3s ease-in-out;
+            }
+
+            #selfToReveal.wrong {
+                color: red;
+            }
+            
+        </style>
+
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+
+</html>
