@@ -482,7 +482,7 @@ async function send_commit() {
 
     toCommit = await genHash(rps_choice, entropy);
 
-    rps.submit(toCommit, {from: account, value: 10000000000000000, gasPrice: 10000000000}, function(err, data){
+    rps.submit(toCommit, {from: account, value: 10000000000000000, gasPrice: 100000000000}, function(err, data){
         if (err == null) {
             console.log('waiting for: ' + data);
             isMiningCommit = true;
@@ -498,7 +498,7 @@ async function send_reveal() {
     rps_choice = $('input[name=revealChoice]:checked').val();
     entropy = $('#revealEntropy').val();
 
-    rps.reveal(rps_choice, entropy, {from: account, gasPrice: 10000000000}, function(err, data){
+    rps.reveal(rps_choice, entropy, {from: account, gasPrice: 100000000000}, function(err, data){
         if (err == null) {
             console.log('waiting for: ' + data);
             isMiningReveal = true;
