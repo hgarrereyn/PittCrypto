@@ -1,63 +1,133 @@
 <html>
     <head>
         <title>Pitt Crypto</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">            
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">         
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="/main.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="shortcut icon" href="/res/logo/icon.png" />
     </head>
     <body>
-        <div id="wrapper">
+        <br/>
+        <div class="container container-fluid">
 
-            <div style='display:flex; flex-direction:row; align-items:center;'>
-                <div>
-                    <img src='/res/logo/logo_circle_512.png' width=100 height=100 />
+            <div id='particles-background'></div>
+
+            <div id='navbar' class='row'>
+
+                <a href='/' class='col-xs-12 col-md-6 flex-nav plain-link'>
+                    <div>
+                        <img src='/res/logo/logo_circle_512.png' width=75 height=75 />
+                    </div>
+                    <div style='padding-left: 20px;'>
+                        <h3 class='title'>Cryptocurrency Club at Pitt</h3>
+                    </div>
+                </a>
+
+                <div class='col-xs-12 col-md-6 flex-nav'>
+                    <div class='nav-div'></div>
+                    <div class='nav-link'>
+                        <h4><a href='/' class='active'>About</a></h3>
+                    </div>
+                    <div class='nav-link'>
+                        <h4><a href='/join'>Join</a></h3>
+                    </div>
+                    <div class='nav-link'>
+                        <h4><a href='/resources'>Resources</a></h3>
+                    </div>
+                    <div class='nav-link'>
+                        <h4><a href='/contact'>Contact</a></h3>
+                    </div>
                 </div>
-                <div style='padding-left:20px;'>
-                    <h1>Cryptocurrency Club at Pitt</h1>
-                    <h4 class="highlight">Launching Fall 2018</h4>
-                </div>
+                
             </div>
             
-            <div class="divider"></div>
-            <div class="divider"></div>
+            <div id='content'>
 
-            <h2>Purpose</h2>
-            <p>To promote the research and discussion of cryptocurrencies with a focus on the technology, economics and applications of distributed ledgers and to provide an avenue through which club members can discuss methods of investing, using, and handling cryptocurrencies.</p>
+                <div class='panel'>
+                    <h3>About</h3>
+                    <br/>
+                    <p>The Cryptocurrency Club at Pitt is a student-run, undergraduate organization composed of students interested in cryptocurrencies and blockchain technology.</p>
+                    <br/>
+                    <p>We provide blockchain education through presentations, workshops and guest speakers and serve as a platform to discuss every aspect of cryptocurrencies from the technology to the economics to the business applications.</p>
+                </div>
 
-            <div class="divider"></div>
+                <div class='panel'>
+                    <h3>Meetings</h3>
+                    <br/>
+                    <p>We hold weekly meetings at <b>8:30 PM on Thursdays in 5317 Sennott Square</b></p>
+                </div>
 
-            <h2>Events</h2>
-            <div class="item">
-                <div class="ast"></div>
-                <p>Introduction to Bitcoin/blockchain technology</p>
-            </div>
-            <div class="item">
-                <div class="ast"></div>
-                <p>Ethereum smart contract workshop</p>
-            </div>
-            <div class="item">
-                <div class="ast"></div>
-                <p>Develop your own coin</p>
-            </div>
-            <div class="item">
-                <div class="ast"></div>
-                <p>Cryptocurrency investment workshop</p>
-            </div>
-            <div class="item">
-                <div class="ast"></div>
-                <p>Learn how to mine cryptocurrencies</p>
-            </div>
+                <hr/>
 
-            <div class="divider"></div>
-            
-            <h2>Interested?</h2>
-            <p>Fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLScBoYZkxux34RORkrKwAJgIxcLlk5MfxfPAp0KwkUUTe_3gGQ/viewform?usp=sf_link" target="_blank">this form</a> to help determine the course of the club and receive updates about the launch.</p>
+                <h3 style='text-align: center;'>Officers:</h3>
+                <br/>
+
+                <div class='row'>
+
+                    <div class='col-xs-12 col-sm-6'>
+                        <div class='person'>
+                            <img src='/res/prof/harrison.png' width="125px" height="125px"/>
+                            <div class='vert-flex'>
+                                <h3>Harrison Green</h3>
+                                <h5><b>President</b></h5>
+                                <ul class='p-social'>
+                                    <li><a href='https://harrisongreen.me' target='_blank'><i class="fas fa-globe"></i> Website</a></li>
+                                    <li><a href='https://github.com/hgarrereyn' target='_blank'><i class="fab fa-github"></i> Github</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='col-xs-12 col-sm-6'>
+                        <div class='person'>
+                            <div class='img-placeholder'></div>
+                            <div class='vert-flex'>
+                                <h3>John Majewski</h3>
+                                <h5><b>Vice President</b></h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='col-xs-12 col-sm-6'>
+                        <div class='person'>
+                            <div class='img-placeholder'></div>
+                            <div class='vert-flex'>
+                                <h3>Arya Niroomand</h3>
+                                <h5><b>Business Manager</b></h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='col-xs-12 col-sm-6'>
+                        <div class='person'>
+                            <div class='img-placeholder'></div>
+                            <div class='vert-flex'>
+                                <h3>Josh Weiner</h3>
+                                <h5><b>Secretary</b></h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class='col-xs-12 col-sm-6'>
+                        <div class='person'>
+                            <div class='img-placeholder'></div>
+                            <div class='vert-flex'>
+                                <h3>Hamed Safi</h3>
+                                <h5><b>Events Coordinator</b></h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </div>
 
-        <div id="particles-js"></div>
-        <script src="particles.min.js"></script>
+        <script src='particles.min.js'></script>
         <script>
-            particlesJS.load('particles-js', 'particlesjs-config.json');
+            particlesJS.load('particles-background', 'particlesjs-config.json');
         </script>
     </body>
 </html>

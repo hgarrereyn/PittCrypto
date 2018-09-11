@@ -1,8 +1,7 @@
 body {
     font-family: 'Roboto Slab', sans-serif;
-    /* background-color: #eee; */
-    background-color: #111;
-    color: #fff;
+    background-color: #f4f4f4;
+    color: #13273e;
 }
 
 h1, h2, h3, h4, p {
@@ -10,54 +9,141 @@ h1, h2, h3, h4, p {
     margin: 0px;
 }
 
-.highlight {
-    color: #4cc5e0;
+.nav-link {
+    padding: 15px;
+}
+
+.nav-div {
+    flex-grow: 1;
 }
 
 a {
-    color: #4cc5e0;
+    color: #aaa;
 }
 
-#wrapper {
-    margin-top: 100px;
-    margin-left: 10%;
-    margin-right: 10%;
+a:hover {
+    color: #111;
+    text-decoration: none;
 }
 
-p {
-    max-width: 400px;
+a:focus {
+    text-decoration: none;
+    outline: none;
 }
 
-.divider {
-    height: 40px;
-}
-
-.item {
-    position: relative;
-}
-
-.item p {
-    position: absolute;
-    top: 0px;
-    left: 14px;
-}
-
-.ast {
-    color: #4cc5e0;
-    display: inline-block;
-    font-size: 26px;
-    margin-bottom: -10px;
-}
-
-.ast::before {
-    content: '*';
-}
-
-#particles-js {
+#particles-background {
     position: absolute;
     top: 0px;
     left: 0px;
     right: 0px;
-    bottom: 0px;
-    z-index: -10;
+    height: 120px;
+    z-index: -1;
+}
+
+#navbar {
+    margin: 0px;
+    padding: 0px;
+    height: 100px;
+}
+
+#navbar .flex-nav {
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar .flex-nav .nav-div {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    #navbar {
+        height: 75px;
+    }
+
+    #navbar .flex-nav {
+        justify-content: left;
+    }
+
+    #navbar .flex-nav .nav-div {
+        display: block;
+    }
+}
+
+#content {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.panel {
+    padding: 20px;
+}
+
+.panel p {
+    font-size: 16px;
+}
+
+a.active {
+    color: #13273e;
+    border-bottom: 2px solid #13273e;
+}
+
+a.plain-link {
+    display: inherit;
+}
+
+.title {
+    color: #13273e;
+}
+
+.person {
+    display: flex;
+    padding-bottom: 20px;
+}
+
+.person img {
+    display: block;
+    width: 125px;
+    height: 125px;
+    border-radius: 15px;
+}
+
+.person .img-placeholder {
+    display: block;
+    width: 125px;
+    height: 125px;
+    border-radius: 15px;
+    background-color: #e8e8e8;
+}
+
+.person ul.p-social {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.person ul.p-social li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.person ul.p-social li a {
+    text-decoration: none;
+    color: #888;
+}
+
+.vert-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.social {
+    font-size: 20px;
+}
+
+.social a {
+    color: #13273e;
 }
