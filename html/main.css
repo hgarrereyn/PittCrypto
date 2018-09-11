@@ -2,6 +2,7 @@ body {
     font-family: 'Roboto Slab', sans-serif;
     background-color: #f4f4f4;
     color: #13273e;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, p {
@@ -43,18 +44,23 @@ a:focus {
 #navbar {
     margin: 0px;
     padding: 0px;
-    height: 100px;
 }
 
 #navbar .flex-nav {
-    height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
 #navbar .flex-nav .nav-div {
     display: none;
+}
+
+#navbar .nav-title {
+    padding-left: 20px; 
+    padding-bottom: 10px;
 }
 
 @media (min-width: 992px) {
@@ -115,6 +121,7 @@ a.plain-link {
     height: 125px;
     border-radius: 15px;
     background-color: #e8e8e8;
+    flex-shrink: 0;
 }
 
 .person ul.p-social {
